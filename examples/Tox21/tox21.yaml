@@ -1,0 +1,31 @@
+data:
+  dataset_path: ???
+  sdf_dataset_compression: none # e.g. gzip
+  smiles_column: smiles
+  result_path: tox21.parquet
+  reparse_smiles: False
+  standardize_mol: True
+  return_smiles: True
+  return_properties: False
+  chem_features:
+    ecfp6:
+      type: morgan_fp
+      radius: 3
+      nBits: 2048
+      kwargs:       # RDKit function kwargs
+        useChirality: True
+    ecfc6:
+      type: morgan_fc
+      radius: 3
+      kwargs:       # RDKit function kwargs
+        useChirality: True
+    maccs:
+      type: maccs_keys
+    mordred:
+      type: mordred_descriptors
+    tox:
+      type: tox_keys
+
+ray:
+  num_actors: 12
+  dashboard_port: ???

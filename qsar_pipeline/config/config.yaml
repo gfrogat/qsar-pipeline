@@ -1,0 +1,9 @@
+# @package _global_
+#
+data:
+  standardize_mol: True
+  return_smiles: True
+  return_properties: False
+
+ray:
+  dashboard_port: ???
